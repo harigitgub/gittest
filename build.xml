@@ -1,6 +1,13 @@
-<?xml version="1.0"?>
-<project name="Git test project" default ="print_msg">
-	<target name="print_msg">
-	<echo>Hello world</echo>
+<?xml version ="1.0" ?>
+<project name ="Git test project" default = "print_msg" >
+	<target name = "print_msg" depends ="dependency1, dependency2" >
+	<echo> Hello World </echo>
 	</target>
-	</project>
+	<property file ="build.properties"/>
+	<target name="dependency1">
+	<echo>DEPENDENCY 1: ${ant.version} </echo>
+	</target>
+	<target name="dependency2">
+	<echo> DEPENDEENCY 2: ${ant.home} SITE : ${sitename} </echo>
+	</target>
+</project>
